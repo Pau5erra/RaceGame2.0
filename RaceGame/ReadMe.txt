@@ -10,6 +10,10 @@ Try it!
 GAME:
 Instructions:
 
+Title:
+Current time, Balls left, best time
+
+Controls:
 Arrow UP : Start/Accelerate
 Arrow Down: Back
 Arrow Left/Right: Direction of car
