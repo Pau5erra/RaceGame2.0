@@ -21,6 +21,8 @@ bool ModuleSceneIntro::Start()
 	LOG("Loading Intro assets");
 	bool ret = true;
 
+	
+
 	App->camera->Move(vec3(0.0f, 13.0f, -10.0f));
 	App->camera->LookAt(vec3(0, 5, 6));
 	
@@ -31,14 +33,15 @@ bool ModuleSceneIntro::Start()
 	CreateCube(vec3(150.0f, 1.0f, 150.0f), vec3(0, 0, 0), vec3(0.0f, 5.0f, 1.0f));
 	
 	//Walls
-	CreateCube(vec3(150.0f, 20.0f, 1.0f), vec3(0, 10.0f, 75.0f), vec3(0.0f,1.0f,5.0f));
-	CreateCube(vec3(150.0f, 20.0f, 1.0f), vec3(0, 10.0f, -75.0f), vec3(0.0f, 1.0f, 5.0f));
-	CreateCube(vec3(1.0f, 20.0f, 150.0f), vec3(75.0f, 10.0f, 0), vec3(0.0f, 1.0f, 5.0f));
-	CreateCube(vec3(1.0f, 20.0f, 150.0f), vec3(-75.0f, 10.0f, 0), vec3(0.0f, 1.0f, 5.0f));
+	CreateCube(vec3(150.0f, 60.0f, 1.0f), vec3(0, 30.0f, 75.0f), vec3(0.0f,1.0f,5.0f));
+	CreateCube(vec3(150.0f, 60.0f, 1.0f), vec3(0, 30.0f, -75.0f), vec3(0.0f, 1.0f, 5.0f));
+	CreateCube(vec3(1.0f, 60.0f, 150.0f), vec3(75.0f, 30.0f, 0), vec3(0.0f, 1.0f, 5.0f));
+	CreateCube(vec3(1.0f, 60.0f, 150.0f), vec3(-75.0f, 30.0f, 0), vec3(0.0f, 1.0f, 5.0f));
 
 	CreateRandSpheres(NUM_BALLS);
+	
 	App->audio->PlayMusic("MasterOfPuppets.ogg");
-
+	pop = App->audio->LoadFx("Pop.ogg");
 
 	return ret;
 }
@@ -71,7 +74,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	
 	if (App->player->god_mode == false){
 		if (App->player->start){
-			time -= 0.02f;
+			time -= 0.01f;
 		}
 	}
 	if (App->player->god_mode){
@@ -93,6 +96,7 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 	for (tmp2; tmp2 != NULL; tmp2 = tmp2->next){
 		
 		if (i == spheres_body.find(body1)){
+			App->audio->PlayFx(pop);
 			tmp2->data->SetPos(tmp2->data->GetPos().x, tmp2->data->GetPos().y - 6, tmp2->data->GetPos().z);
 			balls_left--;
 			break;

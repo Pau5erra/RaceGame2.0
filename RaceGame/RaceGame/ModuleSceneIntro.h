@@ -60,6 +60,9 @@ public:
 	float best_time;
 
 	int balls_left;
+
+	//Sound
+	uint pop;
 };
 
 

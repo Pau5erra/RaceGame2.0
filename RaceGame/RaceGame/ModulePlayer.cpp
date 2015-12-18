@@ -152,6 +152,7 @@ if (start){
 		if (App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT)
 		{
 			acceleration = -MAX_ACCELERATION * 4;
+	
 		}
 
 		if ((turn_num>50.0f || turn_num<-50.0f) && vehicle->GetKmh()>100.0f)

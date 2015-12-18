@@ -116,6 +116,20 @@ update_status ModuleCamera3D::Update(float dt)
 			Look(vec3(matrix.M[12], matrix.M[13] + 6, matrix.M[14]) - Z * 10, vec3(matrix[12], matrix[13] + 2, matrix[14]), true);
 
 		}
+
+		if (Position.x > 75){
+			Position.x = 75;
+		}
+		if (Position.x < -75){
+			Position.x = -75;
+		}
+		if (Position.z > 75){
+			Position.z = 75;
+		}
+		if (Position.z < -75){
+			Position.z = -75;
+		}
+
 	}
 	// Recalculate matrix -------------
 	CalculateViewMatrix();
