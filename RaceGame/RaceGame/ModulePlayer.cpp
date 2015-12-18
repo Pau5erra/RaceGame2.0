@@ -20,10 +20,10 @@ bool ModulePlayer::Start()
 	LOG("Loading player");
 
 	//SoundsFx
-	victorious = App->audio->LoadFx("Victorious.ogg");
-	game_over = App->audio->LoadFx("GameOver.ogg");
-	accelerate = App->audio->LoadFx("Accelerate.ogg");
-	car_break = App->audio->LoadFx("Break.ogg");
+	victorious = App->audio->LoadFx("sounds/Victorious.ogg");
+	game_over = App->audio->LoadFx("sounds/GameOver.ogg");
+	accelerate = App->audio->LoadFx("sounds/Accelerate.ogg");
+	car_break = App->audio->LoadFx("sounds/Break.ogg");
 
 	//vehicle set
 	VehicleInfo car;

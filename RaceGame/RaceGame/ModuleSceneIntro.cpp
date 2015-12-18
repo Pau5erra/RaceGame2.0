@@ -40,8 +40,8 @@ bool ModuleSceneIntro::Start()
 
 	CreateRandSpheres(NUM_BALLS);
 	
-	App->audio->PlayMusic("MasterOfPuppets.ogg");
-	pop = App->audio->LoadFx("Pop.ogg");
+	App->audio->PlayMusic("sounds/MasterOfPuppets.ogg");
+	pop = App->audio->LoadFx("sounds/Pop.ogg");
 
 	return ret;
 }
@@ -66,10 +66,6 @@ bool ModuleSceneIntro::CleanUp()
 // Update
 update_status ModuleSceneIntro::Update(float dt)
 {
-	Plane p(0, 1, 0, 0);
-	p.axis = true;
-	p.Render();
-	
 	RenderStaticPieces();
 	
 	if (App->player->god_mode == false){

@@ -10,7 +10,7 @@ Try it!
 GAME:
 Instructions:
 
-Arrow UP : Accelerate
+Arrow UP : Start/Accelerate
 Arrow Down: Back
 Arrow Left/Right: Direction of car
 
