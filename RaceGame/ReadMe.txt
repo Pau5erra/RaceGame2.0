@@ -13,6 +13,7 @@ Instructions:
 Arrow UP : Start/Accelerate
 Arrow Down: Back
 Arrow Left/Right: Direction of car
+B : Hand Break
 
 Keys:
 
